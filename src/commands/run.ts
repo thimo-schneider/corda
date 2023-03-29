@@ -1,4 +1,5 @@
-import {Command, Flags} from '@oclif/core'
+import { Command, Flags } from '@oclif/core'
+import {runReproducibly} from "../kubernetes/runReproducibly"
 
 export default class Run extends Command {
   static description = 'describe the command here'
@@ -7,22 +8,21 @@ export default class Run extends Command {
     '<%= config.bin %> <%= command.id %>',
   ]
 
+
   static flags = {
-    // flag with a value (-n, --name=VALUE)
-    name: Flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: Flags.boolean({char: 'f'}),
+    namespace: Flags.string({ char: "s", description: "Namespace", required: true }),
+    name: Flags.string({ char: "n", description: "Name of Pod", required: true }),
+    workflow_descriptor: Flags.string({ char: "d", description: "workflow descriptor", required: true }),
+    irods_auth: Flags.string({ char: "a", description: "irods authentication file", required: true })
   }
 
-  static args = [{name: 'file'}]
+  // static args = [{ name: 'file' }]
+  static args = {}
 
   public async run(): Promise<void> {
-    const {args, flags} = await this.parse(Run)
-
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from /home/thimo/Masterarbeit/kubernetes-client/kubernetes-client/src/commands/run.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    const { args, flags } = await this.parse(Run)
+    // const { namespace, name, image, commit } = flags
+    const { workflow_descriptor, namespace, name , irods_auth} = flags
+    runReproducibly(namespace, name, workflow_descriptor, irods_auth)
   }
 }

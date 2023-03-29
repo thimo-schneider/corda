@@ -5,7 +5,7 @@ metadata:
   namespace: pod-namespace-to-replace
 spec:
   containers:
-    - image: pod-image-to-replace #coffeeginger/masterarbeit:latest
+    - image: pod-image-to-replace
       name: dev-container
       ports:
         - containerPort: 8888

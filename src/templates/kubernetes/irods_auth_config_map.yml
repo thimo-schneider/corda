@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map-name-to-replace
+  namespace: namespace-to-replace
+data:
+  .irodsA: "data-to-replace"
+  irods_environment.json: "data-to-replace"

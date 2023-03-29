@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-map-name-to-replace
+  namespace: namespace-to-replace
+data:
+  workflow_descriptor.json: "data-to-replace"

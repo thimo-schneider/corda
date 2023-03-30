@@ -13,7 +13,8 @@ export default class Run extends Command {
     namespace: Flags.string({ char: "s", description: "Namespace", required: true }),
     name: Flags.string({ char: "n", description: "Name of Pod", required: true }),
     workflow_descriptor: Flags.string({ char: "d", description: "workflow descriptor", required: true }),
-    irods_auth: Flags.string({ char: "a", description: "irods authentication file", required: true })
+    irods_auth: Flags.string({ char: "a", description: "irods authentication file", required: true }),
+    git_token: Flags.string({ char: "t", description: "git authentication token", required: true })
   }
 
   // static args = [{ name: 'file' }]
@@ -22,7 +23,7 @@ export default class Run extends Command {
   public async run(): Promise<void> {
     const { args, flags } = await this.parse(Run)
     // const { namespace, name, image, commit } = flags
-    const { workflow_descriptor, namespace, name , irods_auth} = flags
-    runReproducibly(namespace, name, workflow_descriptor, irods_auth)
+    const { workflow_descriptor, namespace, name, irods_auth, git_token} = flags
+    runReproducibly(namespace, name, workflow_descriptor, irods_auth, git_token)
   }
 }

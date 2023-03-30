@@ -16,6 +16,13 @@ spec:
             secretKeyRef:
               name: irods-password
               key: irods-password
+        - name: GIT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: name-to-replace
+              key: git-password
+        - name: RUN_MODE
+          value: value-to-replace
       volumeMounts:
         - name: workflow-descriptor
           mountPath: "/app/config"

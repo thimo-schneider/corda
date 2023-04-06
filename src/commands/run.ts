@@ -2,7 +2,7 @@ import { Command, Flags } from '@oclif/core'
 import {runReproducibly} from "../kubernetes/runReproducibly"
 
 export default class Run extends Command {
-  static description = 'describe the command here'
+  static description = 'Starts a reproducible run'
 
   static examples = [
     '<%= config.bin %> <%= command.id %>',

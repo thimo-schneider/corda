@@ -27,12 +27,18 @@ spec:
         - name: workflow-descriptor
           mountPath: "/app/config"
           readOnly: false
+        - name: claim-name-to-replace
+          mountPath: "/app/analysis"
+          readOnly: false
   imagePullSecrets:
     - name: thimo-secret
   volumes:
     - name: workflow-descriptor
       configMap:
         name: config-map-name-to-replace
+    - name: pvc-name-to-replace
+      persistentVolumeClaim:
+        claimName: claim-name-to-replace
 
 
 

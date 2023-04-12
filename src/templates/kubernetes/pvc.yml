@@ -1,8 +1,8 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: test-pvc
-  namespace: thimo
+  name: pvc-name-to-replace
+  namespace: namespace-to-replace
 spec:
   accessModes:
   - ReadWriteMany

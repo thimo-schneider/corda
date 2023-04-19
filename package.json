@@ -20,7 +20,7 @@
     "@kubernetes/client-node": "^0.18.1",
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.2.2",
+    "@oclif/plugin-plugins": "^2.4.6",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.9",

@@ -28,7 +28,7 @@ spec:
           mountPath: "/app/config"
           readOnly: false
   imagePullSecrets:
-    - name: thimo-secret
+    - name: corda-pull-secret
   volumes:
     - name: workflow-descriptor
       configMap:

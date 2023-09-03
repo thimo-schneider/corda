@@ -32,7 +32,7 @@ spec:
           mountPath: "/app/analysis"
           readOnly: false
   imagePullSecrets:
-    - name: thimo-secret
+    - name: corda-pull-secret
   volumes:
     - name: workflow-descriptor
       configMap:

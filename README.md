@@ -6,6 +6,7 @@ CORDA
 1. Install appropriate node/npm version, can be found in package.json
 2. Install packages: navigate to project root and execute "npm install"
 3. Build: Run "npm run build", artifacts will be generated in "bin" directory
+4. Set up kubernetes pull secret with the name "corda-pull-secret"
 
 ## Pack
 In order to generate executables, follow the first steps and run "npm run pack". This will generate executables for different architectures in the dist directory.
